@@ -1,13 +1,13 @@
 # MERN app
 
-## Backend:
+# Backend:
 
 RESTful API built from scratch with Node.js, Express, MongoDB and Mongoose.
 
 - CRUD operations
 - Secure API by adding JWT authentication
 
-## Frontend:
+# Frontend:
 
 React
 
