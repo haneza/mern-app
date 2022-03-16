@@ -1,6 +1,7 @@
 "use strict";
 
 const asyncHandler = require("express-async-handler");
+const Goal = require("../models/goalModel");
 
 const getGoals = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Get goals" });
