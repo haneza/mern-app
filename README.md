@@ -15,17 +15,17 @@ React
 
 # Backend deps
 
+```
 npm init
 npm i express dotenv mongoose colors
 npm i -D nodemon
 npm i express-async-handler
+```
 
 # Frontend deps
 
 ### Run Server
 
-npm run server
-
 ```
-
+npm run server
 ```
