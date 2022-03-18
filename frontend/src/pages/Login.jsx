@@ -1,12 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
-import { useState, useEffect } from "react";
-import { FaSignInAlt } from "react-icons/fa";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -27,12 +26,13 @@ function Login() {
     if (isError) {
       toast.error(message);
     }
+
     if (isSuccess || user) {
       navigate("/");
     }
 
     dispatch(reset());
-  }, [user, isError, isSuccess, message, dispatch]);
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -40,6 +40,7 @@ function Login() {
       [e.target.name]: e.target.value,
     }));
   };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -47,8 +48,10 @@ function Login() {
       email,
       password,
     };
+
     dispatch(login(userData));
   };
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -57,13 +60,13 @@ function Login() {
     <>
       <section className="heading">
         <h1>
-          <FaSignInAlt />
-          Login
+          <FaSignInAlt /> Login
         </h1>
-        <p>Please login to your account</p>
+        <p>Login and start setting goals</p>
       </section>
+
       <section className="form">
-        <form onsubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
               type="email"
@@ -82,7 +85,7 @@ function Login() {
               id="password"
               name="password"
               value={password}
-              placeholder="Enter your password"
+              placeholder="Enter password"
               onChange={onChange}
             />
           </div>

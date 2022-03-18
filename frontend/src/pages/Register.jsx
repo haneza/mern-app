@@ -16,6 +16,7 @@ function Register() {
   });
 
   const { name, email, password, password2 } = formData;
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -27,12 +28,13 @@ function Register() {
     if (isError) {
       toast.error(message);
     }
+
     if (isSuccess || user) {
       navigate("/");
     }
 
     dispatch(reset());
-  }, [user, isError, isSuccess, message, dispatch]);
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -40,17 +42,19 @@ function Register() {
       [e.target.name]: e.target.value,
     }));
   };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
     if (password !== password2) {
-      toast.error("Password do not match");
+      toast.error("Passwords do not match");
     } else {
       const userData = {
         name,
         email,
         password,
       };
+
       dispatch(register(userData));
     }
   };
@@ -67,8 +71,9 @@ function Register() {
         </h1>
         <p>Please create an account</p>
       </section>
+
       <section className="form">
-        <form onsubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
               type="text"
@@ -98,7 +103,7 @@ function Register() {
               id="password"
               name="password"
               value={password}
-              placeholder="Enter your password"
+              placeholder="Enter password"
               onChange={onChange}
             />
           </div>
@@ -109,7 +114,7 @@ function Register() {
               id="password2"
               name="password2"
               value={password2}
-              placeholder="Enter your password again"
+              placeholder="Confirm password"
               onChange={onChange}
             />
           </div>

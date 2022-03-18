@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "reac-redux";
+import { useDispatch } from "react-redux";
 import { createGoal } from "../features/goals/goalSlice";
 
 function GoalForm() {
@@ -25,7 +25,7 @@ function GoalForm() {
             name="text"
             id="text"
             value={text}
-            onChange={(e) => setText(e.target, value)}
+            onChange={(e) => setText(e.target.value)}
           />
         </div>
         <div className="form-group">
