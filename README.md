@@ -2,7 +2,7 @@
 
 ## Backend:
 
-RESTful API built from scratch with Node.js, Express, MongoDB and Mongoose.
+RESTful API built from scratch with Node.js, Express, MongoDB and Mongoose
 
 - CRUD operations
 - Secure API by adding JWT authentication
@@ -27,22 +27,21 @@ npm i jsonwebtoken
 npm run server / npm run dev
 ```
 
-####Frontend:
+## Frontend:
 
 React and Redux
--authentication using Redux Toolkit to manage global state.
+-authentication using Redux Toolkit to manage global state
 
 ### Install dependencies
 
-## Frontend deps
+#### Frontend deps
 
+```
 npx create-react-app@latest frontend --template redux
 npm i react-router-dom
 npm i react-icons
 npm i axios react-toastify
-
-(run both client & server the same time install in the root)
-npm i -D concurrently
+```
 
 #### Run Server
 
