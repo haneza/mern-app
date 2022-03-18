@@ -1,31 +1,57 @@
 # MERN app
 
-# Backend:
+## Backend:
 
 RESTful API built from scratch with Node.js, Express, MongoDB and Mongoose.
 
 - CRUD operations
 - Secure API by adding JWT authentication
 
-# Frontend:
-
-React
-
 ### Install dependencies
 
-# Backend deps
+#### Backend deps
 
 ```
 npm init
 npm i express dotenv mongoose colors
 npm i -D nodemon
 npm i express-async-handler
-```
-
-# Frontend deps
-
-### Run Server
+npm i bcryptjs
+npm i jsonwebtoken
 
 ```
-npm run server
+
+#### Run Server
+
+```
+npm run server / npm run dev
+```
+
+####Frontend:
+
+React and Redux
+-authentication using Redux Toolkit to manage global state.
+
+### Install dependencies
+
+## Frontend deps
+
+npx create-react-app@latest frontend --template redux
+npm i react-router-dom
+npm i react-icons
+npm i axios react-toastify
+
+(run both client & server the same time install in the root)
+npm i -D concurrently
+
+#### Run Server
+
+```
+npm run client/ npm run dev
+```
+
+#### To run both client & server the same time, install in the root
+
+```
+npm i -D concurrently
 ```
