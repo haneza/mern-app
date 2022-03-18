@@ -1,4 +1,6 @@
 # MERN app
+Application built with React, Redux, Node.js, Express and MongoDB.
+Registration and login form UI with RESTful API and authentication
 
 ## Backend:
 
