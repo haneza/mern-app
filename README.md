@@ -1,6 +1,8 @@
 # MERN app
 Application built with React, Redux, Node.js, Express and MongoDB.
 Registration and login form UI with RESTful API and authentication
+Deployed on Heroku:
+https://mernapphaneza.herokuapp.com/register
 
 ## Backend:
 
